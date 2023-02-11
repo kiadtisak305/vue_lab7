@@ -14,7 +14,7 @@ const Listtitle = ref([
 <template>
   <v-app>
     <v-app-bar color="#00ced1" density="compact" >
-        <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon class="icon" variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-app-bar-title></v-app-bar-title>
     </v-app-bar>
 
@@ -38,5 +38,7 @@ const Listtitle = ref([
 </template>
 
 <style scoped>
-
+.icon {
+  margin-top: 15px;
+}
 </style>
