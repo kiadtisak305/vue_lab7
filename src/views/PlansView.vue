@@ -13,16 +13,24 @@ const courseslist = courses.coursesList;
         <article>
             <table>
                 <tr>
-                    <th>รหัสวิชา</th>
-                    <th>รายวิชา</th>
+                    <th class="text-left">รหัสวิชา</th>
+                    <th class="text-center">รายวิชา</th>
+                    <th class="text-left">หน่วยกิต</th>
+                    <th class="text-center">ผู้สอน</th>
                 </tr>
 
                 <tr v-for="(course, index) in courseslist" :key="index">
-                    <td style="text-align: left">
+                    <td class="text-left">
                         {{ course.coursecode }}
                     </td>
-                    <td style="text-align: left">
+                    <td class="text-left">
                         {{ course.coursename }}
+                    </td>
+                    <td class="text-left">
+                        {{ course.countunit }}
+                    </td>
+                    <td class="text-left">
+                        {{ course.teacher }}
                     </td>
                 </tr>
             </table>
@@ -33,6 +41,7 @@ const courseslist = courses.coursesList;
 <style scoped>
 .main {
     padding: 50px;
+    background-color:#ffe0ad;
 }
 
 .title {

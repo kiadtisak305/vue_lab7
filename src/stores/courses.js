@@ -72,7 +72,7 @@ export const coursesStore = defineStore('courses', () => {
       coursecode: 'คพ232',
       coursename: 'สถาปัตยกรรมคอมพิวเตอร์',
       countunit: '3 (2-3-5)',
-      teacher: 'ผู้ช่วยศาสตราจารย์ภานุวัฒน์ เมฆะ',
+      teacher: 'ผู้ช่วยศาสตราจารย์ ภานุวัฒน์ เมฆะ',
       date1: 'จันทร์',
       time1: '08:30 - 10:30',
       room1: 'บรรยาย คอม 7',

@@ -1,19 +1,34 @@
+<script setup>
+import { newsStore } from '../stores/news.js';
+import { Icon } from '@iconify/vue';
+const news = newsStore();
+const newslist = news.newsList;
+</script>
+
 <template>
-<div class="main">
-  <div class="title">
-    <h3>ข่าวสาร</h3>
-  </div>
+  <div class="main">
+    <div class="title">
+      <h3>ข่าวสาร</h3>
+    </div>
     <article>
       <table>
         <tr>
-          <th>วันที่</th>
-          <th>หัวข้อ</th>
+          <th class="text-center">วันที่</th>
+          <th class="text-center">หัวข้อ</th>
+          <th></th>
         </tr>
 
-        <tr v-for="news_content in newslist" :key="news_content.newsId">
-          <td style="text-align: left">{{ news_content.News_Date }}</td>
-          <td style="text-align: left">
-            <a :href="news_content.News_links">{{ news_content.News_Title }}</a>
+        <tr v-for="item in newslist">
+          <td class="text-center">
+            {{ item.newsdate }}
+          </td>
+          <td class="text-left">
+            {{ item.newstitle }}
+          </td>
+          <td>
+            <a :href="item.newslinks">
+              <Icon icon="mdi:open-in-new" />
+            </a>
           </td>
         </tr>
       </table>
@@ -21,17 +36,13 @@
   </div>
 </template>
 
-<script setup>
-import { newsStore } from '../stores/news.js';
-const news = newsStore();
-const newslist = news.newsList;
-</script>
-
 <style scoped>
 .main {
-  padding: 50px ;
+  padding: 50px;
+  background-color:#ffe0ad;
 }
-.title{
+
+.title {
   text-align: center;
 }
 </style>

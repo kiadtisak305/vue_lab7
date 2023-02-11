@@ -13,14 +13,12 @@ const Listtitle = ref([
 
 <template>
   <v-app>
-    <v-app-bar color="primary" density="compact" >
-      <template v-slot:prepend>
+    <v-app-bar color="#00ced1" density="compact" >
         <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      </template>
       <v-app-bar-title></v-app-bar-title>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" location="left" temporary>
+    <v-navigation-drawer color="#b8feff" v-model="drawer" location="left" temporary>
       <v-list>
         <v-list-item v-for="(item, index) in Listtitle " :key="index" :to="{ name: item.link }">
           <v-list-item-content>
@@ -32,9 +30,13 @@ const Listtitle = ref([
       </v-list>
     </v-navigation-drawer>
 
-    <v-main>
+    <v-main >
       <RouterView />
     </v-main>
   </v-app>
 
 </template>
+
+<style scoped>
+
+</style>
